@@ -1,4 +1,11 @@
+
+{% load tailwind_tags %}
+{% tailwind_css %}
+
 <h1>Product Details</h1>
+<a href="{% url 'products' %}" class="btn">Go Back</a>
 
 <br>
 <h2>Product: {{ product }}</h2>
+
+

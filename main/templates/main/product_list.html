@@ -9,27 +9,39 @@
     {% tailwind_css %}
 </head>
 <body>
-    
-    <h1 class="bg-slate-500">Product List</h1>
+    <div class="container">
 
-    <table>
-        <tr>
-            <th>Product Title</th>
-            <th>Price</th>
-            <th>Description</th>
-            <th>Category</th>
-            <th>Status</th>
-        </tr>
-        {% for product in products %}
-        <tr>
-            <td>{{product.name}}</td>
-            <td>{{product.price}}</td>
-            <td>{{product.description}}</td>
-            <td>{{product.category}}</td>
-            <td>{{product.status}}</td>
-        </tr>
-        {% endfor %}
-    </table>   
+        
+            
+        <h1 class="bg-slate-500">Product List</h1>
+
+        <a href="{% url 'product-create' %}" class="btn">Add Product</a>
+
+        <table>
+            <tr>
+                <th>Product Title</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>
+            </tr>
+            {% for product in products %}
+            <tr>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.category}}</td>
+                <td>{{product.status}}</td>
+                <td><a href="{% url 'product' product.id %}">View</a></td>
+                <td><a href="{% url 'product-update' product.id %}">Edit</a></td>
+                
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+   
 </body>
 </html>
 

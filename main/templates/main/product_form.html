@@ -1,0 +1,8 @@
+<h3>Product Create</h3>
+<a href="{% url 'products' %}">Go Back</a>
+<form method="POST" action="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Submit">
+
+</form>

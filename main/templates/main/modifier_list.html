@@ -1,0 +1,43 @@
+{% load tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% tailwind_css %}
+</head>
+<body>
+    <div class="container">
+
+        
+            
+        <h1 class="bg-slate-500">Modifiers</h1>
+
+        <a href="{% url 'modifier-create' %}" class="btn">Add Modifier</a>
+
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th></th>
+                </tr>
+            {% for modifier in modifiers %}
+            <tr>
+                <td>{{modifier.name}}</td>
+                <td>{{modifier.price}}</td>
+                <td>{{modifier.description}}</td>
+                <td>{{modifier.name}}</td>
+                <td><a href="{% url 'modifier-update' modifier.id %}">Edit</a></td>
+                
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+   
+</body>
+</html>
+
